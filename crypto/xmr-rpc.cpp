@@ -849,8 +849,8 @@ static bool download_inital_scratchpad(const char* path_to, const char* url)
 	curl_easy_setopt(curl, CURLOPT_ERRORBUFFER, curl_error_buff);
 	curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, curl_write_data);
 	curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
-	//curl_easy_setopt(curl, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1_2);
-	curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0);
+	curl_easy_setopt(curl, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1_2);
+	curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 2L);
 	if (opt_cert) {
 		curl_easy_setopt(curl, CURLOPT_CAINFO, opt_cert);
 	} else {
